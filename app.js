@@ -27,7 +27,30 @@ import ReactDOM from 'react-dom/client';
 // console.log(root);
 // root.render(parent);
 
-const jsxHeading = <h1 id="heading">I am an h1 tag</h1>;
+
+// JSX => Babel transpiles it to React.createElement => ReactElement JS Object => HTMLElement(render)
+//React Element
+const heading = (
+<h1 className='head'>
+  I am an h1 tag
+  </h1>
+);
+
+const Title = () => (
+  <h1>This is title</h1>
+);
+
+//React component
+const HeadingComponent = () =>
+ (
+    <div>
+      {/* <Title /> */}
+      {Title()}
+      <h1 className='heading'>H1 Tag from component!</h1>
+    </div>
+  );
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeading);
+//root.render(heading); // rendering as element
+root. render(<HeadingComponent />); // rendering as component
